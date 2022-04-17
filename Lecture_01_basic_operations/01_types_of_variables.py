@@ -20,3 +20,8 @@ t = "hello 'world'" # можно t = 'hello "world"'
 u = 'hello \nworld' # \n - оператор переноса на новую строку
 
 print(s, t, u)
+
+# логический тип данных 'bool'
+
+f = True
+print(type(f))
