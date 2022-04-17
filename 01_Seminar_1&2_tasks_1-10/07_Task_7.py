@@ -1,19 +1,15 @@
 # Задача 7. Проверить истинность утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
-x = [True, False]
-y = [True, False]
-z = [True, False]
-
-print('x', '  ', 'y', '  ', 'z', '     ', 'assumption_1', ' ', 'assumption_2')
 flag = True
-for i in range(0, 2):
-        for j in range(0, 2):
-            for k in range(0, 2):
-                assumption_1 = not (x[i] or y[j] or z[k])
-                assumption_2 = not x[i] and not y[i] and not z[k]
-                print(x[i], y[j], z[k],'  ', assumption_1, '        ', assumption_2)
-                if assumption_1 != assumption_2:
-                    flag = False
+print('x', 'y', 'z', ' ', 'левая часть', ' ', 'правая часть')
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            left_equation = not (x or y or z)
+            right_equation = (not x and not y and not z)
+            print(x, y, z, ' ',left_equation, '       ',right_equation)
+            if left_equation != right_equation:
+                 flag = False
 
 if flag == True:
    print('\nУтверждение истино\n')
