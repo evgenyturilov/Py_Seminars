@@ -1,15 +1,14 @@
 # Задача 4. Показать первую цифру дробной части числа.
 
 number = input('Введите вещественное число: ')
-print(number)
-# print(type(number))
-# print(len(number))
 
-def find_digit(n):
-    for i in range(len(number) - 1):
-        if number[i] == '.' or ',':
-            result_digit = number[i + 1]
-    return result_digit
-        
-print('Первая цифра дробной части числа:')
+def find_digit(number):
+    if '.' in number or ',' in number:
+        for i in range(len(number) - 1):
+            if number[i] == '.' or number[i] == ',':
+                result_digit = number[i + 1]
+                return (f'Первая цифра дробной части числа: {result_digit}')
+    else:
+        return ('Вы ввели целое число')
+
 print(find_digit(number))
